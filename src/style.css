@@ -1,0 +1,47 @@
+body {
+    background-color: var(--pico-background-color);
+    color: var(--pico-color);
+    font-family: var(--pico-font-family);
+}
+
+.nav_bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#yearSelect {
+    width: 15%;
+}
+
+#logo {
+    width: 10%;
+}
+
+.login-button{
+    background-color: black;
+    border: none;
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.login-button:hover{
+    background-color: #0f0f0f;
+}
+
+kbd:hover {
+    cursor: pointer;
+}
+
+#info {
+    color: #575757;
+    font-size: 0.8em;
+}
+
+.dropdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

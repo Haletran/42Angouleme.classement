@@ -1,0 +1,44 @@
+name: Update Info
+
+on:
+  schedule:
+    - cron: '' # Setup your cron here (for every hour 0 * * * *)
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    env:
+      CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      with:
+        token: ${{ secrets.PUSH_AUTO }}
+
+    - name: Use Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '22'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Update repo
+      run: git pull
+
+    - name: Remove old info
+      run: rm -f generate_info/db/2023.json && rm -f generate_info/db/2022.json && rm -f generate_info/db/all.json
+
+    - name: Generate new info
+      run: node generate_info/update_info.js
+
+    - name: Commit and push if it changed
+      run: |
+        git config --global user.email "action@github.com"
+        git config --global user.name "GitHub Action"
+        git fetch
+        git add .
+        git diff --quiet && git diff --staged --quiet || (git commit -am "Update Classement $(date '+%Y-%m-%d %H:%M:%S')" && git push)
