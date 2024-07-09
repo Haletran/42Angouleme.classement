@@ -13,7 +13,7 @@ fetch(url)
     // Créez l'en-tête du tableau
     let thead = document.createElement('thead');
     let headerRow = document.createElement('tr');
-    ["#", "Profile", "Login", "Level", "Profile"].forEach(header => {
+    ["#", "Image", "Login", "Level", "Profile"].forEach(header => {
       let th = document.createElement('th');
       th.textContent = header;
       th.scope = "col";

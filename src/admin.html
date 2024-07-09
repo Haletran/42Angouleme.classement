@@ -1,0 +1,44 @@
+<html class=" sriklqxms idc0_350 gedibfdo"><head>
+    <title>Classement Angouleme</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png"/>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .center {
+            text-align: center;
+        }
+        .sus {
+            margin: 10px;
+            width: 100px;
+        }
+        </style>
+  </head>
+  <body>
+    <div class="container">
+        <img class="sus" src="https://www.logopng.com.br/logos/among-us-130.png">
+        <button id="playButton">Start</button>
+    </div>
+
+    <audio id="mySound" src="sus.mp3" preload="auto"></audio>
+    <script>
+        document.getElementById('playButton').addEventListener('click', function() {
+            var mySound = document.getElementById('mySound');
+            mySound.play();
+            var img = document.createElement('img');
+            img.src = 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fseeklogo.com%2Fimages%2FI%2Fimpostor-text-among-us-logo-6D830972AC-seeklogo.com.png&f=1&nofb=1&ipt=fa3c7f1eef356f7ffdf302e0e931aebe0cb1915a5f93f351ff4dea9e6542b671&ipo=images';
+            var susImg = document.querySelector('.sus');
+            img.style.margin = '20px';
+            susImg.parentNode.insertBefore(img, susImg);
+            this.disabled = true;
+            this.style.display = 'none';
+        });
+    </script>
+</body>

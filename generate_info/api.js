@@ -1,10 +1,9 @@
 const BASE_URL = "https://api.intra.42.fr";
 const TOKEN_URL = `${BASE_URL}/oauth/token`;
-const CLIENT_ID = process.env.CLIENT_ID;
-const CLIENT_SECRET = process.env.CLIENT_SECRET;
+const CLIENT_ID = ;
+const CLIENT_SECRET = ;
 const TOKEN_DATA = `grant_type=client_credentials&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`;
 
-// Fonction pour obtenir un token
 async function getToken() {
   try {
     const response = await fetch(TOKEN_URL, {

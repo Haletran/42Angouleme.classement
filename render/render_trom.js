@@ -1,5 +1,5 @@
-let urls = ["../generate_info/db/2022.json", "../generate_info/db/2023.json"];
-let date = ["2022", "2023"];
+let urls = ["../generate_info/db/july.json", "../generate_info/db/2023.json", "../generate_info/db/2022.json", ];
+let date = ["Juillet 2024", "2023", "2022"];
 
 async function fetchData() {
   for (let i = 0; i < urls.length; i++) {
@@ -10,7 +10,10 @@ async function fetchData() {
       let div = document.createElement('article');
       div.className = 'grid';
       let h2 = document.createElement('h2');
-      h2.textContent = `PROMO ${date[i]}`;
+      if (i == 0) {
+        h2.textContent = `PISCINE ${date[i]}`;
+      } else
+        h2.textContent = `PROMO ${date[i]}`;
       h2.className = 'promo';
 
       div.appendChild(h2);

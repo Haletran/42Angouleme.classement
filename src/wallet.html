@@ -1,8 +1,30 @@
 <html class=" sriklqxms idc0_350 gedibfdo"><head>
-    <title>Classement Angouleme</title>
+    <title>Trombinoscope Angouleme</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="favicon.png"/>
+    <style>
+      .imgDiv {
+          position: relative;
+      }
+
+      .myImageClass {
+          border-radius: 20%;
+          margin: 5px;
+      }
+
+      .myImageClass:hover {
+          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+          transition: 0.1s;
+          transform: scale(1.1);
+          border-radius: 20%;
+          animation: ease-in-out;
+          cursor: pointer;
+      }
+      .grid {
+        grid-template-columns: repeat(7, 1fr);
+      }
+    </style>
   </head>
   <body class="sticky-header">
     <main class="container">
@@ -21,33 +43,37 @@
                   Others
                 </summary>
                 <ul dir="rtl">
-                  <li><a href="trombinoscope.html" class="secondary">Trombinoscope</a></li>
+                  <li><a href="trombinoscope.html" class="secondary" >Trombinoscope</a></li>
                   <li><a href="https://find-peers.codam.nl/Angouleme" target="_blank">Find-Peers</a></li>
                   <li><a href="https://s42.app/" target="_blank">Stud42</a></li>
                 </ul>
               </details> 
             </li>
-              <li><kbd data-tooltip="Source code" data-placement="right" onclick="window.open('https://github.com/Haletran/42Angouleme.classement', '_blank')">v1.8</kbd></li>
+              <li><kbd data-tooltip="Source code" data-placement="right" onclick="window.open('https://github.com/Haletran', '_blank')">v1.8</kbd></li>
           </ul>
         </nav>
       </div>
     </header>
     <br>
+    <button id="back" onclick="window.open('https://shop.intra.42.fr/', '_blank')">SHOP</button>
     <select name="selection" id="yearSelect">
       <optgroup label="Level">
           <option value="ALL">ALL</option>
-          <option value="2023" selected disabled>2023</option>
+          <option value="2023">2023</option>
           <option value="2022">2022</option>
           <option value="POOL">🏊 Piscine</option>
         </optgroup>
         <optgroup label="Others">
           <option value="coco">Radin de points</option>
-          <option value="wallet">Les plus riches</option>
+          <option value="wallet" selected disabled>Les plus riches</option>
         </optgroup>
     </select>
-    <p id="info">Data is updated every hour :)</p>
-      <div id="results"></div>  
+      <p id="info">Data is updated every hour :)</p>
+      <hgroup>
+        <p id="total"></p>
+      </hgroup>
+      <div id="results"></div>
       <script src="change.js"></script>
-      <script src="../render/render_2023.js"></script>
+      <script src="../render/render_wallet.js"></script>
   </main>
   </body></html>

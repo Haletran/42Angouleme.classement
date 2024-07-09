@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="favicon.png"/>
   </head>
-  <body>
+  <body class="sticky-header">
     <main class="container">
       <header>
         <div class="nav_bar">
@@ -27,17 +27,23 @@
                 </ul>
               </details> 
             </li>
-              <li><kbd data-tooltip="Source code" data-placement="right" onclick="window.open('https://github.com/Haletran', '_blank')">v1.5</kbd></li>
+              <li><kbd data-tooltip="Source code" data-placement="right" onclick="window.open('https://github.com/Haletran/42Angouleme.classement', '_blank')">v1.8</kbd></li>
           </ul>
         </nav>
       </div>
     </header>
     <br>
     <select name="selection" id="yearSelect">
-      <option value="2022" selected disabled>2022</option>
-      <option value="2023">2023</option>
-      <option value="ALL">ALL</option>
-      <option value="DISCO">🪩 DISCO</option>
+      <optgroup label="Level : ">
+          <option value="ALL">ALL</option>
+          <option value="2023">2023</option>
+          <option value="2022" selected disabled>2022</option>
+          <option value="POOL">🏊 Piscine</option>
+        </optgroup>
+        <optgroup label="Others">
+          <option value="coco">Radin de points</option>
+          <option value="wallet">Les plus riches</option>
+        </optgroup>
     </select>
     <p id="info">Data is updated every hour :)</p>
       <div id="results"></div>  

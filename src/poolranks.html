@@ -27,21 +27,39 @@
                 </ul>
               </details> 
             </li>
-              <li><kbd data-tooltip="Source code" data-placement="right" onclick="window.open('https://github.com/Haletran', '_blank')">v1.5</kbd></li>
+              <li><kbd data-tooltip="Source code" data-placement="right" onclick="window.open('https://github.com/Haletran/42Angouleme.classement', '_blank')">v1.8</kbd></li>
           </ul>
         </nav>
       </div>
     </header>
     <br>
     <select name="selection" id="yearSelect">
-      <option value="DISCO" selected disabled>🪩 DISCO</option>
-      <option value="2023">2023</option>
-      <option value="2022">2022</option>
-      <option value="ALL">ALL</option>
+      <optgroup label="Level">
+        <option value="ALL">ALL</option>
+        <option value="2023">2023</option>
+        <option value="2022">2022</option>
+        <option value="POOL"selected disabled>🏊 Piscine</option>
+      </optgroup>
+      <optgroup label="Others">
+        <option value="coco">Radin de points</option>
+        <option value="wallet">Les plus riches</option>
+      </optgroup>
     </select>
     <p id="info">Data is updated every hour :)</p>
+    <details>
+      <summary id="warning">WARNING</summary>
+      <p><strong>Votre niveau n'est pas le critère principal dans la sélection à l'école 42 !</strong> 
+      <br>Ce classement est principalement à but éducatif et ne fait pas foi dans 
+      les décisions du staff quant à votre acceptation à 42.
+      </p>
+    </details>
+      <article>
+        <p id="countdown"></p>
+        <progress id="progressBar" value="0" max="100"></progress>
+      </article>
       <div id="results"></div>  
       <script src="change.js"></script>
       <script src="../render/render_disco.js"></script>
   </main>
+  <script src="countdown.js"></script>
   </body></html>

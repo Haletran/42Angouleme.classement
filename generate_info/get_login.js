@@ -8,7 +8,7 @@ const BASE_URL = "https://api.intra.42.fr";
 const url_all = `${BASE_URL}/v2/campus/31/users?per_page=150`;
 const url_2023 = `${BASE_URL}/v2/campus/31/users?per_page=150&filter[pool_year]=2023`;
 const url_2022 = `${BASE_URL}/v2/campus/31/users?per_page=150&filter[pool_year]=2022`;
-const url_2024 = `${BASE_URL}/v2/campus/31/users?per_page=150&filter[pool_year]=2024&filter[pool_month]=june`;
+const url_2024 = `${BASE_URL}/v2/campus/31/users?per_page=150&filter[pool_year]=2024&filter[pool_month]=july`;
 const { getToken } = require("./api.js");
 
 // FUNCTIONS
@@ -35,7 +35,7 @@ async function user_login(url) {
         page++;
         await new Promise((resolve) => setTimeout(resolve, 700));
     } while (activeUsers.length > 0);
-    console.log("All logins have been fetched.");
+    console.log(`All logins of ${url} have been fetched.`);
     return allUsers;
 }
 
@@ -51,21 +51,16 @@ async function writeLoginsToFile(users, filename) {
 
 (async () => {
     console.log("Getting all logins...");
-    const [users2023, users2022, usersAll, users2024] = await Promise.all([
-        user_login(url_2023),
-        user_login(url_2022),
-        user_login(url_all),
+    const [users2024] = await Promise.all([
+        //user_login(url_2023),
+        //user_login(url_2022),
+        //user_login(url_all),
         user_login(url_2024),
     ]);
 
-    ['info/2024_login.json'].forEach(file => {
-        if (fs.existsSync(file)) {
-            fs.unlinkSync(file);
-        }
-    });
 
-    await writeLoginsToFile(users2023, 'info/2023_login.json');
-    await writeLoginsToFile(users2022, 'info/2022_login.json');
-    await writeLoginsToFile(usersAll, 'info/all_login.json');
-    await writeLoginsToFile(users2024, '2024_login.json');
+    //await writeLoginsToFile(users2023, '2023_login.json');
+    //await writeLoginsToFile(users2022, '2022_login.json');
+    //await writeLoginsToFile(usersAll, 'all_login.json');
+    await writeLoginsToFile(users2024, 'july.json');
 })();

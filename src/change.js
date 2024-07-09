@@ -10,9 +10,12 @@
       window.location.href = 'index.html';
     } else if (year === '2022') {
       window.location.href = '2022ranks.html';
-    } else if (year === 'DISCO')
-      window.location.href = 'discoranks.html';
-    
+    } else if (year === 'POOL') {
+      window.location.href = 'poolranks.html';
+    } else if (year == 'coco') {
+      window.location.href = 'points.html';
+    } else if (year == 'wallet')
+      window.location.href = 'wallet.html';
   });
 
   if (!localStorage.getItem('isConnected')) {
@@ -34,7 +37,7 @@
 window.onload = function () {
   const authorizationCode = getAuthorizationCodeFromURL();
   if (authorizationCode) {
-      fetch('', { // YOUR VERCEL LINK
+      fetch('https://server-42.vercel.app/api/exchange', {
           method: 'POST',
           body: JSON.stringify({ code: authorizationCode }),
           headers: { 'Content-Type': 'application/json' },

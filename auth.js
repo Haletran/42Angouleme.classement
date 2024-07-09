@@ -19,7 +19,6 @@ function getCookie(name) {
     return null;
 }
 
-// DUMB WAYS TO KEEP TRACK OF CONNECTION
 function redirectToMainIfConnected() {
     const isConnected = getCookie("isConnected");
     if (isConnected) {
@@ -28,7 +27,7 @@ function redirectToMainIfConnected() {
     else {
         setCookie("isConnected", "true", 1);
         localStorage.setItem('isConnected', 'true');
-        window.location.href = ""; //REDIRECT_URL 
+        window.location.href = "https://api.intra.42.fr/oauth/authorize?client_id=u-s4t2ud-8478757f7a8b61acce2e1bbabfbb611dd43c43ad3ffe85db957cf4da8692f91c&redirect_uri=https%3A%2F%2Fhaletran.github.io%2Fclassement.42angouleme%2Fsrc%2Findex.html&response_type=code";
     }
 }
 

@@ -8,6 +8,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
+}
+
+body.sticky-header header {
+    position: sticky;
+    position: -webkit-sticky;
+    background-color: var(--pico-background-color);
+    top: 0;
 }
 
 #yearSelect {
@@ -33,6 +41,26 @@ body {
 
 kbd:hover {
     cursor: pointer;
+}
+
+@keyframes flash {
+    0% {opacity: 1;}
+    50% {opacity: 0.1;}
+    100% {opacity: 1;}
+}
+
+#countdown {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #bbbaba;
+    text-align:left;
+}
+
+#warning {
+    color: red;
+    font-weight: bold;
+    font-size: 0.8em;
+    animation: flash 2s linear infinite;
 }
 
 #info {
