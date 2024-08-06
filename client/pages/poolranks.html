@@ -1,0 +1,148 @@
+<html class=" sriklqxms idc0_350 gedibfdo"><head>
+    <title>Classement Angouleme</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/favicon.png"/>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script> -->
+  </head>
+  <body class="sticky-header" style="z-index: 1000;">
+    <!-- <canvas id="confetti-canvas"></canvas> -->
+    <main class="container">
+      <header class="sticky-header">
+        <div class="nav_bar">
+        <nav>
+          <ul>
+            <li>
+              <a href="https://42-fzphrs-projects.vercel.app/" class="secondary">Correcteur</a>
+            </li>
+            <li><a href="https://rncp.hacku.org/rncp" class="secondary">RNCP</a></li>
+            <li><a href="https://tmoron.fr/intra" class="secondary" target="_blank">42 Subjects</a></li>
+            <li>
+              <details class="dropdown">
+                <summary>
+                  Others
+                </summary>
+                <ul dir="rtl">
+                  <li><a href="/trombinoscope" class="secondary">Trombinoscope</a></li>
+                  <li><a href="https://find-peers.codam.nl/Angouleme" target="_blank">Find-Peers</a></li>
+                  <li><a href="https://s42.app/" target="_blank">Stud42</a></li>
+                  <li><a href="https://www.42ctf.org/en/" target="_blank">42CTF</a></li>
+                  <li><a href="https://42tools.slopez.dev/" target="_blank">42tools</a></li>
+                </ul>
+              </details> 
+            </li>
+              <li><kbd data-tooltip="Source code" data-placement="right" onclick="window.open('https://github.com/Haletran/42Angouleme.classement', '_blank')">v2.2</kbd></li>
+              <li><button onclick="window.location.href='/logout'" class="outline" style="color:red; border-color: red;"><ion-icon name="log-out-outline"></ion-icon></button></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <br>
+    <select name="selection" id="yearSelect">
+      <optgroup label="Level">
+        <option value="ALL">ALL</option>
+        <option value="2023">2023</option>
+        <option value="2022">2022</option>
+        <option value="POOL"selected disabled>🏊 Piscine</option>
+      </optgroup>
+      <optgroup label="Others">
+        <option value="coco">Radin de points</option>
+        <option value="wallet">Les plus riches</option>
+      </optgroup>
+    </select>
+    <p id="info">Data is updated every hour :)</p>
+      <article>
+        <header>
+        <p id="countdown"></p>
+        <progress id="progressBar" value="0" max="100"></progress>
+      </header>
+      <details>
+        <summary>📚 Data de la piscine</summary>
+        <div role="group">
+          <article id="container-data1"></article>
+          <article id="container-data2"></article>
+          <article id="container-data3"></article>
+          <article id="container-data4"></article>
+          <article id="container-data5"></article>
+        </div>
+    </details>
+      <details >
+        <summary >📊 Les Stats de la piscine</summary>
+        <div id="chart-container">
+          <div role="group">
+            <canvas id="myChart" width="300" height="100" ></canvas>
+            <canvas id="myChart2" width="300" height="100" style="display: none;"></canvas>
+<!--             <canvas id="myChart3" width="300" height="100" style="display: none;"></canvas>
+            <canvas id="myChart4" width="300" height="100" style="display: none;"></canvas>
+            <canvas id="myChart5" width="300" height="100" style="display: none;"></canvas> -->
+          </div>
+          <div class="switch_button">
+            <button id="switchButton_before"><ion-icon name="chevron-back"></ion-icon></button>
+            <button id="switchButton_after"><ion-icon name="chevron-forward"></ion-icon></button>
+          </div>
+        </div>
+    </details>
+    <details>
+      <summary>👥 Les Tuteurs</summary>
+      <div id="tutors"></div>
+    </details>
+      </article>
+      <p><strong>Votre niveau n'est pas le critère principal dans la sélection à l'école 42 !</strong> 
+        <br>Ce classement est principalement à but éducatif et ne fait pas foi dans 
+        les décisions du staff quant à votre acceptation à 42.
+        </p>
+
+<!--         <dialog id="congratulations-dialog"  open>
+          <article>
+            <header>
+              <p>
+                <button id="close-button" aria-label="Close" rel="prev"></button>
+                <strong>👏 Bravo à vous !!</strong>
+              </p>
+            </header>
+            <p>
+              <strong>Félicitations à tous les participants de la piscine 42 de Juillet !</strong> <br>Votre détermination et votre travail acharné sont impressionnants. 
+              <br>
+              Bravo pour tout ce que vous avez accompli durant ces 30 jours !
+            </p>
+            <p>
+              <strong>Voici le podium de la piscine de Juillet :</strong>
+            <ul>
+              <li>🥇 1er : <strong>mrouves</strong></li>
+              <li>🥈 2ème : <strong>ebervas</strong></li>
+              <li>🥉 3ème : <strong>albernar</strong></li>
+            </ul>
+            <p>
+              On se retrouve à la rentrée <strong>le 1er octobre 🚀</strong>
+            </p>
+            <p>
+          </article>
+        </dialog> -->
+      <div id="results"></div>  
+      <script src="../pages/change.js"></script>
+      <script src="../render/render_disco.js"></script>
+      <script src="../render/render_chart.js"></script>
+      <script src="../render/render_chart2.js"></script>
+      <script src="../render/render_chart3.js"></script>
+      <script src="../render/render_tutor.js"></script>
+      <footer>
+        <center>
+          <p id="copyright">Made by <a href="https://profile.intra.42.fr/users/bapasqui" class="secondary">bapasqui</a> with a lot of<img style="width:40px"src="https://slackmojis.com/emojis/85857-redbull/download"></p>
+      </center>
+      </footer>
+  </main>
+<!--   <script>
+    document.getElementById('close-button').addEventListener('click', function() {
+      document.getElementById('congratulations-dialog').close();
+      var canvas = document.getElementById('confetti-canvas');
+      canvas.style.display = 'none';
+    });
+  </script> -->
+  <script src="../pages/countdown.js"></script>
+  <script src="../render/data_text_render.js"></script>
+  <script src="../pages/chart_button.js"></script>
+  <!-- <script src="../render/render_confetti.js"></script> -->
+  </body></html>

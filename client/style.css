@@ -1,0 +1,134 @@
+body {
+    background-color: var(--pico-background-color);
+    color: var(--pico-color);
+    font-family: var(--pico-font-family);
+    
+}
+
+.nav_bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+body.sticky-header header {
+    position: sticky;
+    position: -webkit-sticky;
+    background-color: var(--pico-background-color);
+    top: 0;
+    z-index: 1000;
+}
+
+
+.sticky-header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: var(--pico-background-color);
+}
+
+#yearSelect {
+    width: 15%;
+}
+
+#logo {
+    width: 10%;
+}
+
+.login-button{
+    background-color: black;
+    border: none;
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    width: 50%;
+    
+}
+
+.login-button:hover{
+    background-color: #0f0f0f;
+}
+
+kbd:hover {
+    cursor: pointer;
+}
+
+@keyframes flash {
+    0% {opacity: 1;}
+    50% {opacity: 0.1;}
+    100% {opacity: 1;}
+}
+
+#countdown {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #bbbaba;
+    text-align:left;
+}
+
+#warning {
+    color: red;
+    font-weight: bold;
+    font-size: 0.8em;
+    animation: flash 2s linear infinite;
+}
+
+#info {
+    color: #575757;
+    font-size: 0.8em;
+}
+
+.dropdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#myChart {
+    width: 50%;
+    height: 50%;
+}
+
+#tutor-image:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+summary:focus {
+    color: var(--pico-accordion-close-summary-color) !important;
+}
+
+#copyright {
+    color: #707070;
+    font-size: 0.8em;
+}
+
+
+#container-data1, #container-data2, #container-data3, #container-data4, #container-data5, #container-data6 {
+    background-color: var(--pico-background-color);
+}
+
+.switch_button {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80%;
+}
+
+.switch_button button {
+    background: rgba(47, 47, 146);
+    border: none;
+    padding: 1px 20px;
+    outline: none;
+}
+
+.switch_button button:hover {
+    background: rgba(47, 47, 146, 0.8);
+}
+
+#available, #unavailable {
+    background-color: #202632;
+    color: #CFD5E2;
+    cursor:default;
+}

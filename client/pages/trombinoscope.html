@@ -1,0 +1,78 @@
+<html class=" sriklqxms idc0_350 gedibfdo"><head>
+    <title>Trombinoscope Angouleme</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/favicon.png"/>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <style>
+      .imgDiv {
+          position: relative;
+      }
+
+      .myImageClass {
+          border-radius: 20%;
+          margin: 5px;
+      }
+
+      .myImageClass:hover {
+          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+          transition: 0.1s;
+          transform: scale(1.1);
+          border-radius: 20%;
+          animation: ease-in-out;
+          cursor: pointer;
+      }
+      .grid {
+        grid-template-columns: repeat(7, 1fr);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container" style="z-index: 1000;">
+      <header>
+        <div class="nav_bar">
+        <nav>
+          <ul>
+            <li>
+              <a href="https://42-fzphrs-projects.vercel.app/" class="secondary" target="_blank">Correcteur</a>
+            </li>
+            <li><a href="https://rncp.hacku.org/rncp" class="secondary" target="_blank">RNCP</a></li>
+            <li>
+                <a href="/classement" class="secondary">Classement</a>
+              </li>
+            <li>
+              <details class="dropdown">
+                <summary>
+                  Others
+                </summary>
+                <ul dir="rtl">
+                  <li><a href="https://tmoron.fr/intra" class="secondary" target="_blank">42 Subjects</a></li>
+                  <li><a href="https://find-peers.codam.nl/Angouleme" target="_blank">Find-Peers</a></li>
+                  <li><a href="https://s42.app/" target="_blank">Stud42</a></li>
+                  <li><a href="https://www.42ctf.org/en/" target="_blank">42CTF</a></li>
+                  <li><a href="https://42tools.slopez.dev/" target="_blank">42tools</a></li>
+                </ul>
+              </details> 
+            </li>
+              <li><kbd data-tooltip="Source code" data-placement="right" onclick="window.open('https://github.com/Haletran', '_blank')">v2.2</kbd></li>
+              <li><button onclick="window.location.href='/logout'" class="outline" style="color:red; border-color: red;"><ion-icon name="log-out-outline"></ion-icon></button></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <br>
+      <hgroup>
+        <h1>42 Angouleme</h1>
+        <p>(2022->NOW)</p>
+      </hgroup>
+      <br>
+      <div id="results"></div>  
+      <script src="../render/render_trom.js"></script>
+      <footer>
+        <center>
+          <p id="copyright">Made by <a href="https://profile.intra.42.fr/users/bapasqui" class="secondary">bapasqui</a> with a lot of<img style="width:40px"src="https://slackmojis.com/emojis/85857-redbull/download"></p>
+      </center>
+      </footer>
+  </main>
+  </body></html>
