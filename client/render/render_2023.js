@@ -1,4 +1,3 @@
-// Supposons que vous ayez un fichier JSON à l'URL suivante
 let url = "../generate_info/db/2023.json";
 
 let userLogin = localStorage.getItem('user');

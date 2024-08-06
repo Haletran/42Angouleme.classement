@@ -4,7 +4,7 @@
 [![Update Info](https://github.com/Haletran/classement.42angouleme/actions/workflows/main.yml/badge.svg)](https://github.com/Haletran/classement.42angouleme/actions/workflows/main.yml)
 
 
--> [Visit the website](https://haletran.github.io/classement.42angouleme/) <-
+-> [Visit the website](https://classement-42angouleme.onrender.com) <-
 
 # Project Overview
 
