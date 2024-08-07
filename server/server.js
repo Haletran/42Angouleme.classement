@@ -5,6 +5,18 @@ const path = require('path');
 const PORT = process.env.PORT || 3000;
 const config = require('./config');
 const session = require('express-session');
+const fs = require('fs');
+
+function isUserWhitelisted(userId) {
+    try {
+        const data = fs.readFileSync('whitelist.json');
+        const whitelist = data.toString().split('\n').filter(Boolean);
+        return whitelist.includes(userId);
+    } catch (error) {
+        console.error('Error reading whitelist file:', error);
+        return false;
+    }
+}
 
 app.use(session({
     secret: config.SESSION_SECRET,
@@ -41,11 +53,11 @@ app.get('/auth', async (req, res) => {
         if (me.status !== 200) {
             throw new Error('Invalid token');
         }
-        if (me.data.campus[0].id !== 31) {
-            throw new Error('Invalid campus');
-        }
         if (me.data.pool_year >= 2024) {
-            throw new Error('Invalid pool year');
+            throw new Error('Not allowed to access');
+        }
+        if (!isUserWhitelisted(me.data.login)) {
+            throw new Error('User not whitelisted');
         }
         req.session.accessToken = accessToken;
         res.redirect('/classement');
