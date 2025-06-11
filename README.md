@@ -1,10 +1,7 @@
 # 42Angouleme.classement 
 
-[![pages-build-deployment](https://github.com/Haletran/classement.42angouleme/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/Haletran/classement.42angouleme/actions/workflows/pages/pages-build-deployment)
-[![Update Info](https://github.com/Haletran/classement.42angouleme/actions/workflows/main.yml/badge.svg)](https://github.com/Haletran/classement.42angouleme/actions/workflows/main.yml)
-
-
--> [Visit the website](https://classement-42angouleme.onrender.com) <-
+⚠️ This website is no longer maintened, go here for the update version : [42insight](https://www.42insight.tech/)
+or here for the new repo : [repo](https://github.com/fZpHr/42insight)
 
 # Project Overview
 
