@@ -1,7 +1,6 @@
 # 42Angouleme.classement 
 
-⚠️ This website is no longer maintened, go here for the update version : [42insight](https://www.42insight.tech/)
-or here for the new repo : [repo](https://github.com/fZpHr/42insight)
+⚠️ This website is no longer maintened, go here for the update version : [42insight](https://github.com/fZpHr/42insight)
 
 # Project Overview
 
